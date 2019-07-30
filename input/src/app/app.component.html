@@ -1,0 +1,12 @@
+<div style="text-align:center">
+	<h1>
+		Welcome to {{ name }}!
+	</h1>
+	<hr>
+	<p>Hi jayanth</p>
+	<app-parent></app-parent>
+</div>
+
+<app-child [myAwesomeValue]="3+6+10"
+(myOutputValue)="awesomeMethod($event)"	
+></app-child>

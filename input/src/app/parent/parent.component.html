@@ -1,0 +1,7 @@
+<h1>
+  Parent component
+</h1>
+<p>Hi jayanth</p>
+<input type="text" #price (keyup)="onchange(price.value)"/>
+
+<app-child [newPrice]="currentPrice"></app-child>
