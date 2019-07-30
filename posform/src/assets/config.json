@@ -1,0 +1,12 @@
+[
+    {
+        "err1" : "Should not be blank",
+        "err2" : "should be numeric"
+
+    },
+    {
+        "err1" : "Email should not blank",
+        "err2" : "Should be valid email address"
+    }
+
+]

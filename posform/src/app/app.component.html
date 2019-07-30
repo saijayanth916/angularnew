@@ -1,0 +1,30 @@
+<h1>hi</h1>
+<div class="container">
+  <form #userForm = "ngForm">
+    <div class="form-group" id="test1">
+      <label>Phone</label>
+      <input type="tel" required #phone="ngModel" 
+      pattern = "^[1-9]\d*$" 
+      [class.is-invalid]="phone.invalid && phone.touched" class="form-control"
+      name="phone" [(ngModel)]="userModel.phone">
+      <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+          <span class="text-danger" *ngIf="phone.errors?.required">{{ this.errValue[0]?.err1 }}</span>
+          <span class="text-danger" *ngIf="phone.errors?.pattern">{{ this.errValue[0]?.err2 }}</span>
+      </div>
+    </div>
+      <div class="form-group" id="test2">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" 
+        required 
+        #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched"
+        pattern = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" 
+        name="email" [(ngModel)]="userModel.email">
+        <span class="text-danger" *ngIf="email.errors?.required && email.touched">{{ this.errValue[1]?.err1 }}</span>
+        <span class="text-danger" *ngIf="email.errors?.pattern && email.touched">{{ this.errValue[1]?.err2 }}</span>
+    </div>
+
+    <button [disabled] = "!userForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
