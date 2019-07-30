@@ -1,0 +1,33 @@
+.table {
+    padding-top: 20px;
+}
+.arrow {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+    .sidenav {
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:blue;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+.pie {
+    position: absolute;
+    right: 20em;
+    bottom: 5em;
+}
+.table1 {
+    position: absolute;
+    right: 1em;
+    bottom: 12em;
+}
+.template {
+    position: absolute;
+    right: 23em;
+    bottom: 13em;
+}

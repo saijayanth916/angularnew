@@ -1,0 +1,75 @@
+<div class="container">
+  <h4>Template Form Validation</h4>
+</div>
+<form #tempForm = "ngForm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>First Name</p>
+        <input class="form-control" type="text" [(ngModel)]="from" name="from" required #from1 = "ngModel">
+        <div class="form-control-feedback"
+       *ngIf="from1.errors && (from1.dirty || from1.touched)">
+          <p class="text-danger" *ngIf="from1.errors.required">Please enter the first name</p>
+        </div> 
+  
+      </div>
+      <div class="col-md-6">
+        <p>Last Name</p>
+        <input class="form-control" type="text" [(ngModel)]="last" name="last" required #last1 = "ngModel">
+        <div class="form-control-feedback"
+       *ngIf="last1.errors && (last1.dirty || last1.touched)">
+          <p class="text-danger" *ngIf="last1.errors.required">Please enter the last name</p>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Email id</p>
+      <input type="email" class="form-control" 
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      name="email" required [(ngModel)] = "email" #email1="ngModel">
+      <div class="form-control-feedback"
+        *ngIf="email1.errors && (email1.dirty || email1.touched)">
+        <p class="text-danger" *ngIf="email1.errors.required">Please enter email id</p>
+    <p class="text-danger" *ngIf="email1.errors.pattern">Please enter valid email id</p>
+  </div> 
+    </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input">
+            <label>Password</label>
+            <input class="form-control" type="password" minlength=6 [(ngModel)]="password" name="password" required #pass = "ngModel">
+            <div class="form-control-feedback"
+        *ngIf="pass.errors && (pass.dirty || pass.touched)">
+        <p class="text-danger" *ngIf="pass.errors.required">password is mandatory</p>
+    <p class="text-danger" *ngIf="pass.errors.minlength">password must be atleast 6 characters</p>
+  </div> 
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input">
+            <label>Confirm Password</label>
+            <input class="form-control" type="password" minlength=6 [(ngModel)]="confirmpassword" 
+            name="confirmpassword" required 
+            #confpass = "ngModel">
+            <div class="form-control-feedback"
+        *ngIf="confpass.errors && (confpass.dirty || confpass.touched)">
+        <p class="text-danger" *ngIf="confpass.errors.required">Please confirm the password</p>
+    <p class="text-danger" *ngIf="confpass.errors.minlength">password must match</p>
+  </div> 
+          </div>
+        </div>
+      </div>
+    
+      <div class="container" style="margin-top: 20px;">
+        <div class="row">
+          <div class="col-md-6">
+            <button style="margin-right: 20px;" type="button" class="btn btn-light">Reset</button>
+            <button type="submit" (click) = "register()" class="btn btn-primary">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+            

@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+	  <div class="col-md-6">
+		<img src="/assets/login.png" width=500 height=500>
+	  </div>
+	  <div class="col-md-6">
+		<img src="/assets/logoBlockchain.png">
+		<h2>IBM Blockchain</h2>
+  
+		<form #userForm="ngForm" (submit)="loginUser($event)">
+		
+			<div class="input form-group">
+				<label>Username</label>
+				<input class="form-control" type="text" 
+				name="username" [(ngModel)]="userName" 
+				required
+				minlength="5" [pattern]="'^[a-zA-Z]*$'" #uname="ngModel">
+				<span class="text-danger" *ngIf="uname.errors?.required && uname.touched">Name is required</span>
+				<span class="text-danger" *ngIf="!(uname.errors?.pattern) && uname.errors?.minlength">Name should be atleast 5 characters</span>
+				<span class="text-danger" *ngIf="uname.errors?.pattern">name should contain only alphabets</span>
+			</div>
+			<div class="input">
+				<label>Password</label>
+				<input class="form-control" type="password" [ngModel]="user.password" name="password" required #pass = "ngModel">
+				<span class="text-danger" *ngIf="pass.errors?.required && pass.touched">please enter password</span>
+			</div>
+			<div class="input">
+				<input [disabled]="userForm.invalid" type="submit" class="btn btn-primary" value="Submit">
+			</div>
+		</form>
+	  </div>
+	</div>
+  </div>

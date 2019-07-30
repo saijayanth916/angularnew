@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container table">
+  <a style="cursor: pointer;color: blue" (click)="logout()">Home</a><span class="arrow">></span><span>Level3 - Expert</span>
+</div>
+<div class="container">
+  <h4>Level3 - Expert</h4>
+</div>
+<div class="container" style="padding-top:30px;">
+<ul class="nav navbar-nav" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Table</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#template" role="tab" data-toggle="tab">Template Form</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#reactive" role="tab" data-toggle="tab">Reactive Form</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#references" role="tab" data-toggle="tab">Line Chart</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#piechart" role="tab" data-toggle="tab">Pie Chart</a>
+  </li>
+  
+</ul>
+</div>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade table1 in active" id="profile"><app-table1></app-table1></div>
+  <div role="tabpanel" class="tab-pane fade template" id="template"><app-template></app-template></div>
+  <div role="tabpanel" class="tab-pane fade template" id="reactive"><app-reactive></app-reactive></div>
+  <div role="tabpanel" class="tab-pane fade pie" id="references"><app-linechart></app-linechart></div>
+  <div role="tabpanel" class="tab-pane fade pie" id="piechart"><app-piechart></app-piechart></div>
+  
+</div>
