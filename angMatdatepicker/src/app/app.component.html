@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+  <div class = "col-lg-5">
+    <p>Basic format</p>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" placeholder="Choose a date" [value]="date.value">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-7">
+    <p>With month</p>
+    <app-new-comp></app-new-comp>
+  </div>
+  <div>
+    <p>Disabled Weekends</p>
+    <app-disabled></app-disabled>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
