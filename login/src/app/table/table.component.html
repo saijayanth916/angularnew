@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row">
+      <input type="text" class="form-control" name="searchString" placeholder="search" [(ngModel)]="searchString">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sl no</th>
+          <th scope="col">Login</th>
+          <th scope="col">ID</th>
+          <th scope="col">Node ID</th>
+          <th scope="col">Type</th>
+          <th scope="col">Site administrator</th>
+          <th scope="col">Followers URl</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of  this.value | filter : searchString | paginate: {itemsPerPage:4,currentPage:p}">
+          <th scope="row">{{ i.slno}}</th>
+          <td>{{ i.Login}}</td>
+          <td>{{ i.ID}}</td>
+          <td>{{ i.NodeID}}</td>
+          <td>{{ i.Type}}</td>
+          <td>{{ i.SiteAdministrator}}</td>
+          <td>{{ i.FollowersUrl}}</td>
+          <td>></td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event" style="float: left"></pagination-controls>
+  </div>
+</div>
+<div class="btn btn-primary" (click)="exportAsXLSX()" type="button">Export to Excel</div>

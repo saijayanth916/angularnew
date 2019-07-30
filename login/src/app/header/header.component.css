@@ -1,0 +1,14 @@
+header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    border-bottom: 2px solid #eee;
+}
+.anchor {
+    cursor: pointer;
+    float: right;
+}
+.user {
+    right: 14em;
+    position: absolute;
+}

@@ -1,0 +1,22 @@
+ <app-header></app-header>
+<p>User is authenticated</p>
+<a routerLink="/">Go Back</a>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Table</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Form</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#references" role="tab" data-toggle="tab">Graph</a>
+    </li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="profile"><app-table></app-table></div>
+    <div role="tabpanel" class="tab-pane fade" id="buzz"><app-form></app-form></div>
+    <div role="tabpanel" class="tab-pane fade" id="references"><app-graph></app-graph></div>
+  </div>
