@@ -1,0 +1,13 @@
+<div class="col-md-3 form-group">
+<input type="text"
+            placeholder=date
+            value = {{this.dateValue?.date}}
+            class="form-control"
+            #dp="bsDatepicker"
+            bsDatepicker
+            [bsValue]="bsValue"
+            [bsConfig]="datesDisabled"
+            [minDate]="minDate"
+           placeholder="mm/dd/yyyy"
+           >
+          </div>
