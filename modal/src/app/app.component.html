@@ -1,0 +1,12 @@
+<h1>Build a Angular modal dialog with Angular Animate</h1>
+
+<p>
+  <a href="https://coryrylan.com/blog/build-a-angular-modal-dialog-with-angular-animate">Tutorial at coryrylan.com</a>
+</p>
+
+<button (click)="showDialog = !showDialog" class="btn">Open</button>
+
+<app-first [(visible)]="showDialog">
+	<h1>Hello World</h1>
+	<button (click)="showDialog = !showDialog" class="btn">Close</button>
+</app-first>
