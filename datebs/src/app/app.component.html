@@ -1,0 +1,55 @@
+<div class="container" style="padding-top: 20px;">
+  <div class="row">
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+       <input type="text"
+            placeholder=date
+            value = {{this.dateValue?.date}}
+            class="form-control"
+            #dp="bsDatepicker"
+            bsDatepicker
+            [bsValue]="bsInlineValue"
+            [bsConfig]="bsConfig"
+            [minDate]="minDate"
+           [maxDate]="maxDate"
+           [daysDisabled]="[6,0]"
+           [datesDisabled]="disabledDates"
+           [(ngModel)]="datepickerModel"
+           [outsideClick]="false"
+           placement="right"
+           >
+           
+             
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <pre class="code-preview">{{datepickerModel}}<br>{{daterangepickerModel}}</pre>
+      </div>
+    </div>
+    <div class="col-xs-12 col-12 col-md-4 form-group">
+      <input type="text"
+            placeholder="Daterangepicker"
+            class="form-control"
+            bsDaterangepicker
+            [minDate]="minDate"
+           [maxDate]="maxDate"
+           [datesDisabled]="disabledDates"
+           [(ngModel)]="daterangepickerModel"
+           >
+    </div>
+  </div>
+</div>
+
+
+<div class="col-xs-12 col-12 col-sm-8 form-group">
+  <button class="btn btn-success" (click)="dp.show()">Open</button>
+  <button class="btn btn-success" (click)="dp.hide()">Close</button>
+  <button class="btn btn-success" (click)="dp.toggle()">Toggle</button>
+</div>
+
+
+
+
+<app-config></app-config>
+
+
